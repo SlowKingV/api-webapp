@@ -1,3 +1,7 @@
+.hidden {
+  display: none !important;
+}
+
 .popup {
   align-items: center;
   background-color: #00000079;
@@ -23,23 +27,27 @@
 }
 
 .card {
-  align-items: flex-start;
   background-color: white;
-  column-gap: 1em;
-  display: flex;
   max-width: 90%;
   outline: 2px solid black;
   padding: 1em;
   position: relative;
 }
 
-.btn-close {
+#btn-close {
   background-color: #00000081;
   color: #fff;
+  cursor: pointer;
   padding: 0.5em;
   position: absolute;
-  right: 0;
-  top: 0;
+  right: 1em;
+  top: 1em;
+}
+
+.info {
+  align-items: flex-start;
+  column-gap: 1em;
+  display: flex;
 }
 
 .img-wrap {
@@ -66,7 +74,7 @@
   flex: 4;
 }
 
-.info {
+.data {
   list-style: none;
   padding: 0;
 }
@@ -77,8 +85,61 @@
   padding: 0;
 }
 
+#comments {
+  border: 1px solid #000;
+  margin-top: 1em;
+}
+
+#comments-list {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.comment {
+  padding: 0.5em 1em;
+}
+
+.comment:nth-child(odd) {
+  background-color: #d4d4d4;
+}
+
+.comment .message {
+  margin: 0;
+}
+
+#form-comments {
+  display: flex;
+  flex-direction: column;
+  margin: 1em 0;
+  row-gap: 0.5em;
+}
+
+#input-name {
+  border: 1px solid #000;
+  box-sizing: content-box;
+  max-width: 40em;
+}
+
+#area-message {
+  border: 1px solid #000;
+  box-sizing: content-box;
+  height: 5em;
+  max-width: 40em;
+}
+
+#button-submit {
+  align-self: flex-start;
+}
+
 @media screen and (max-width: 1024px) {
-  .card {
+  .popup {
+    align-items: flex-start;
+  }
+
+  .info {
     flex-wrap: wrap;
   }
 
@@ -91,17 +152,31 @@
 
 @media screen and (max-width: 560px) {
   .popup {
-    align-items: flex-start;
+    padding: 0;
   }
+
+  #btn-close {
+    position: fixed;
+  }
+
   .card {
+    max-width: unset;
+    width: 100%;
+  }
+
+  .info {
     align-items: center;
     flex-direction: column;
   }
 
-  .info {
+  .data {
     gap: 0.3em 1em;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+  }
+
+  #button-submit {
+    align-self: center;
   }
 }

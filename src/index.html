@@ -6,7 +6,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>API web app </title>
 	<script src="https://kit.fontawesome.com/bf254b5930.js" crossorigin="anonymous"></script>
-	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 	<header class="header">
@@ -29,50 +28,87 @@
 	</div>
 
 	<!-- Diego's part -->
+	<button>Open Popup</button>
 	<div class="popup">
 
 		<div class="card">
 
-			<div class="btn-close">
+			<div id="btn-close">
 				<i class="fa-solid fa-xmark-large">X</i>
 			</div>
 
-			<div class="img-wrap">
-				<a href="#">
-					<img src="https://via.placeholder.com/210x295" alt="Show image" class="image">
-					<span class="status">Status</span>
-				</a>
+			<div class="info">
+				<div class="img-wrap">
+					<a href="#">
+						<img src="https://via.placeholder.com/210x295" alt="Show image" class="image">
+						<span class="status">Status</span>
+					</a>
+				</div>
+
+				<div class="sum-wrap">
+					<h3 class="sum-title">Summary:</h3>
+					<p class="summary">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Mollitia veniam officiis optio, fugiat possimus reiciendis libero minus. Autem cum harum illo aliquam distinctio tenetur eum accusantium quibusdam quo! Aut, quasi. Iste eius saepe architecto. Ipsam, odit. Libero beatae dolore accusamus cum cumque ipsum! Laudantium, quidem consequuntur quia dolore accusantium mollitia aperiam voluptas aut eligendi tempora itaque obcaecati nemo animi! Iusto delectus architecto magni odit! Dolore, perferendis quos incidunt recusandae nostrum doloribus eaque animi deserunt molestias repellendus praesentium distinctio adipisci, reprehenderit rem? Dignissimos, debitis! Tempora illo quam totam quae eaque aliquam, quia pariatur temporibus iste delectus eligendi dolorum consequatur? Id, dicta!</p>
+				</div>
+
+				<ul class="data">
+					<li class="name">
+						<b>Name: </b>"Name"
+					</li>
+					<li class="lang">
+						<b>Language: </b>"Language"
+					</li>
+					<li class="genres">
+						<b>Genres: </b><ul><li>"Genre"</li></ul>
+					</li>
+					<li class="premiered">
+						<b>Premiered: </b>"Date"
+					</li>
+					<li class="ended">
+						<b>Ended: </b>"Date"
+					</li>
+					<li class="rating">
+						<b>Rating: </b>"Rating"
+					</li>
+					<li class="network">
+						<b>Network: </b><a href="#">NETWORK (Country)</a>
+					</li>
+				</ul>
 			</div>
-			
-			<div class="sum-wrap">
-				<h3 class="sum-title">Summary:</h3>
-				<p class="summary">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Mollitia veniam officiis optio, fugiat possimus reiciendis libero minus. Autem cum harum illo aliquam distinctio tenetur eum accusantium quibusdam quo! Aut, quasi. Iste eius saepe architecto. Ipsam, odit. Libero beatae dolore accusamus cum cumque ipsum! Laudantium, quidem consequuntur quia dolore accusantium mollitia aperiam voluptas aut eligendi tempora itaque obcaecati nemo animi! Iusto delectus architecto magni odit! Dolore, perferendis quos incidunt recusandae nostrum doloribus eaque animi deserunt molestias repellendus praesentium distinctio adipisci, reprehenderit rem? Dignissimos, debitis! Tempora illo quam totam quae eaque aliquam, quia pariatur temporibus iste delectus eligendi dolorum consequatur? Id, dicta!</p>
+
+			<h3>Comments (<i id="counter">#</i>)</h3>
+
+			<div id="comments">
+				<ul id="comments-list">
+					<li class="comment">
+						<p class="message">
+							<time datetime="03-11-2021">03/11/2021</time>
+							<strong class="name">Name:</strong>
+							Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos atque pariatur provident quaerat quia fuga impedit nulla blanditiis corporis eius cum, neque asperiores ullam laborum dolore. Atque provident nulla numquam.
+						</p>
+					</li>
+					<li class="comment">
+						<p class="message">
+							<time datetime="03-11-2021">03/11/2021</time>
+							<strong class="name">Name:</strong>
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam sint iusto at quas ullam sequi molestias. Ex amet unde eligendi?
+						</p>
+					</li>
+					<li class="comment">
+						<p class="message">
+							<time datetime="03-11-2021">03/11/2021</time>
+							<strong class="name">Name:</strong>
+							Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos atque pariatur provident quaerat quia fuga impedit nulla blanditiis corporis eius cum, neque asperiores ullam laborum dolore. Atque provident nulla numquam.
+						</p>
+					</li>
+				</ul>
 			</div>
-			
-			<ul class="info">
-				<li class="name">
-					<b>Name: </b>"Name"
-				</li>
-				<li class="lang">
-					<b>Language: </b>"Language"
-				</li>
-				<li class="genres">
-					<b>Genres: </b><ul><li>"Genre"</li></ul>
-				</li>
-				<li class="premiered">
-					<b>Premiered: </b>"Date"
-				</li>
-				<li class="ended">
-					<b>Ended: </b>"Date"
-				</li>
-				<li class="rating">
-					<b>Rating: </b>"Rating"
-				</li>
-				<li class="network">
-					<b>Network: </b><a href="#">NETWORK (Country)</a>
-				</li>
-			</ul>
-			
+
+			<form id="form-comments">
+				<input id="input-name" type="text" placeholder="Name" required>
+				<textarea id="area-message" placeholder="Enter your message..." required></textarea>
+				<input id="button-submit" type="submit">
+			</form>
+	
 		</div>
 
 	</div>
