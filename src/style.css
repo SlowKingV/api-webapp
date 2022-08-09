@@ -1,5 +1,43 @@
-a {
-  width: 15px;
-  height: 15px;
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.hidden {
+  display: none;
+}
+
+.logo {
   background-color: black;
+  width: 40px;
+  height: 40px;
+}
+
+.header {
+  background-color: aqua;
+  display: flex;
+  padding: 2em;
+  column-gap: 2em;
+}
+
+.nav-list {
+  align-items: center;
+  column-gap: 2em;
+  display: flex;
+  height: 100%;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer {
+  background-color: aqua;
+  width: 100%;
+  padding: 2em;
+  position: absolute;
+  bottom: 0;
 }
