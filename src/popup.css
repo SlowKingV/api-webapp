@@ -1,0 +1,107 @@
+.popup {
+  align-items: center;
+  background-color: #00000079;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  left: 0;
+  overflow-y: scroll;
+  padding: 1em;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: 10;
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.popup::-webkit-scrollbar {
+  display: none;
+}
+
+.card {
+  align-items: flex-start;
+  background-color: white;
+  column-gap: 1em;
+  display: flex;
+  max-width: 90%;
+  outline: 2px solid black;
+  padding: 1em;
+  position: relative;
+}
+
+.btn-close {
+  background-color: #00000081;
+  color: #fff;
+  padding: 0.5em;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.img-wrap {
+  display: inline-block;
+  position: relative;
+}
+
+.img-wrap a {
+  color: #000;
+  display: block;
+  line-height: 0.66em;
+  text-decoration: none;
+}
+
+.img-wrap .status {
+  background-color: #ffffffb4;
+  bottom: 0;
+  padding: 0.4em;
+  position: absolute;
+  right: 0;
+}
+
+.sum-wrap {
+  flex: 4;
+}
+
+.info {
+  list-style: none;
+  padding: 0;
+}
+
+.genres ul {
+  display: inline-block;
+  list-style: none;
+  padding: 0;
+}
+
+@media screen and (max-width: 1024px) {
+  .card {
+    flex-wrap: wrap;
+  }
+
+  .sum-wrap {
+    flex: none;
+    order: 1;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .popup {
+    align-items: flex-start;
+  }
+  .card {
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .info {
+    gap: 0.3em 1em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
