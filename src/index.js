@@ -10,7 +10,7 @@ popup.elements.BTN_CLOSE.addEventListener('click', () => {
   popup.close();
 });
 document.getElementById('btn-open').addEventListener('click', () => {
-  popup.open(34);
+  popup.open(61);
 });
 
 const form = document.getElementById('form-comments');

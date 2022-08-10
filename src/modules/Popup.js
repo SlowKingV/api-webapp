@@ -37,6 +37,8 @@ export default class Popup {
     this.elements.DATA.RATING.innerHTML = `<b>Rating: </b> ${data.rating.average}`;
     this.elements.DATA.NETWORK.innerHTML = `<b>Network: </b> <a href="${data.network.officialSite}">${data.network.name} (${data.network.country.code})</a>`;
 
+    this.elements.COUNTER.textContent = comments.length;
+
     if (comments.length === 0) this.elements.COMMENTS.innerHTML = '<li class="comment empty"><strong>There\'s no comments for this show yet...</strong></li>';
     else {
       this.elements.COMMENTS.innerHTML = '';
@@ -55,6 +57,7 @@ export default class Popup {
     const SUMMARY = this.container.querySelector('.summary');
     const DATA = Popup.#toObject(this.container.querySelector('.data').children);
     const COMMENTS = this.container.querySelector('#comments-list');
+    const COUNTER = this.container.querySelector('#counter');
     const FORM = this.container.querySelector('#form-comments');
 
     return {
@@ -64,6 +67,7 @@ export default class Popup {
       SUMMARY,
       DATA,
       COMMENTS,
+      COUNTER,
       FORM,
     };
   }

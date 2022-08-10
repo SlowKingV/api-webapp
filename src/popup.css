@@ -98,6 +98,10 @@
   margin-top: 1em;
 }
 
+#counter {
+  font-style: normal;
+}
+
 #comments-list {
   display: flex;
   flex-direction: column;
