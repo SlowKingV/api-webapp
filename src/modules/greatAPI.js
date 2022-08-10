@@ -1,4 +1,5 @@
 import { getLikes, sendLikes } from './getlikes.js';
+import shows from '../index.js';
 
 const likeBtn = document.createElement('button');
 likeBtn.innerHTML = 'Like';
