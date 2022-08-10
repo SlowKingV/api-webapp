@@ -10,5 +10,5 @@ popup.elements.BTN_CLOSE.addEventListener('click', () => {
   popup.close();
 });
 document.getElementById('btn-open').addEventListener('click', () => {
-  popup.open();
+  popup.open(61);
 });

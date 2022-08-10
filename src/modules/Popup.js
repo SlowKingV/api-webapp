@@ -1,4 +1,5 @@
 import fetchShowInfo from './TvAPIConsumer.js';
+import { fetchComments } from './InvolvementAPI.js';
 
 export default class Popup {
   constructor(container) {
@@ -10,12 +11,14 @@ export default class Popup {
     this.container.classList.add('hidden');
   }
 
-  open() {
-    fetchShowInfo(54).then((data) => { this.#putDataIntoDOM(data); });
+  async open(id) {
     this.container.classList.remove('hidden');
+    const data = await fetchShowInfo(id);
+    const comments = await fetchComments(`show${id}`);
+    this.#putDataIntoDOM(data, comments);
   }
 
-  #putDataIntoDOM(data) {
+  #putDataIntoDOM(data, comments) {
     this.elements.IMAGE.setAttribute('src', data.image.medium);
     this.elements.STATUS.textContent = data.status;
     this.elements.SUMMARY.innerHTML = data.summary;
@@ -27,6 +30,14 @@ export default class Popup {
     this.elements.DATA.ENDED.innerHTML = `<b>Ended: </b> ${data.ended}`;
     this.elements.DATA.RATING.innerHTML = `<b>Rating: </b> ${data.rating.average}`;
     this.elements.DATA.NETWORK.innerHTML = `<b>Network: </b> <a href="${data.network.officialSite}">${data.network.name} (${data.network.country.code})</a>`;
+
+    if (comments.length === 0) this.elements.COMMENTS.innerHTML = '<li class="comment empty"><strong>There\'s no comments for this show yet...</strong></li>';
+    else {
+      this.elements.COMMENTS.innerHTML = '';
+      comments.forEach((comment) => {
+        this.elements.COMMENTS.innerHTML += Popup.#createComment(comment);
+      });
+    }
   }
 
   #getDOMElements() {
@@ -47,6 +58,20 @@ export default class Popup {
       COMMENTS,
       FORM,
     };
+  }
+
+  static #createComment({ creation_date: creationDate, comment, username }) {
+    const string = `
+<li class="comment">
+  <p class="message">
+    <time datetime="${creationDate}">${creationDate.replaceAll('-', '/')}</time>
+    <b class="name">${username}:</b>
+    ${comment}
+  </p>
+</li>
+`;
+
+    return string;
   }
 
   static #getListItems(array) {
