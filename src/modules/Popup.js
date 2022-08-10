@@ -1,5 +1,5 @@
 import fetchShowInfo from './TvAPIConsumer.js';
-import { fetchComments } from './InvolvementAPI.js';
+import { fetchComments, postComent } from './InvolvementAPI.js';
 
 export default class Popup {
   constructor(container) {
@@ -13,9 +13,15 @@ export default class Popup {
 
   async open(id) {
     this.container.classList.remove('hidden');
-    const data = await fetchShowInfo(id);
-    const comments = await fetchComments(`show${id}`);
-    this.#putDataIntoDOM(data, comments);
+    this.data = await fetchShowInfo(id);
+    this.comments = await fetchComments(`show${id}`);
+    this.#putDataIntoDOM(this.data, this.comments);
+  }
+
+  async submitComment(comment) {
+    await postComent(comment);
+    this.comments = await fetchComments(comment.itemId);
+    this.#putDataIntoDOM(this.data, this.comments);
   }
 
   #putDataIntoDOM(data, comments) {
@@ -38,6 +44,8 @@ export default class Popup {
         this.elements.COMMENTS.innerHTML += Popup.#createComment(comment);
       });
     }
+
+    this.elements.FORM.setAttribute('data-id', data.id);
   }
 
   #getDOMElements() {

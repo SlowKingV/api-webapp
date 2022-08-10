@@ -10,5 +10,17 @@ popup.elements.BTN_CLOSE.addEventListener('click', () => {
   popup.close();
 });
 document.getElementById('btn-open').addEventListener('click', () => {
-  popup.open(61);
+  popup.open(34);
+});
+
+const form = document.getElementById('form-comments');
+form.addEventListener('submit', (event) => {
+  event.preventDefault();
+  const comment = {
+    itemId: `show${form.dataset.id}`,
+    username: form.elements['input-name'].value,
+    comment: form.elements['area-message'].value,
+  };
+
+  popup.submitComment(comment);
 });
