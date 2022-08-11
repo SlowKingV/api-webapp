@@ -34,6 +34,23 @@
   position: relative;
 }
 
+#loader-wrap {
+  align-items: center;
+  background-color: #fff;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 20;
+}
+
+#loader-wrap i {
+  font-size: 3em;
+}
+
 #btn-close {
   background-color: #00000081;
   color: #fff;

@@ -14,14 +14,18 @@ export default class Popup {
   async open(id) {
     this.container.classList.remove('hidden');
     this.data = await fetchShowInfo(id);
-    this.comments = await fetchComments(`show${id}`);
+    this.comments = await fetchComments(id);
     this.#putDataIntoDOM(this.data, this.comments);
+    this.elements.LOADER.classList.add('hidden');
   }
 
   async submitComment(comment) {
     await postComent(comment);
     this.comments = await fetchComments(comment.itemId);
     this.#putDataIntoDOM(this.data, this.comments);
+    this.elements.FORM.elements['button-submit'].disabled = false;
+    this.elements.FORM.elements['input-name'].value = '';
+    this.elements.FORM.elements['area-message'].value = '';
   }
 
   #putDataIntoDOM(data, comments) {
@@ -51,6 +55,7 @@ export default class Popup {
   }
 
   #getDOMElements() {
+    const LOADER = this.container.querySelector('#loader-wrap');
     const BTN_CLOSE = this.container.querySelector('#btn-close');
     const IMAGE = this.container.querySelector('.image');
     const STATUS = this.container.querySelector('.status');
@@ -61,6 +66,7 @@ export default class Popup {
     const FORM = this.container.querySelector('#form-comments');
 
     return {
+      LOADER,
       BTN_CLOSE,
       IMAGE,
       STATUS,
