@@ -46,12 +46,10 @@ body {
 
 .functionality {
   justify-content: space-between;
-  column-gap: 5em;
   display: flex;
+  width: 95%;
   height: 100%;
-  list-style: none;
-  margin: 0;
-  padding: 0;
+  margin: 1.5em;
 }
 
 .footer {
