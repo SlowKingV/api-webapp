@@ -10,15 +10,15 @@ const sendLikes = (name) => {
   });
 };
 
-const getLikes = (name, button) => {
-  fetch(LikeAPI).then(async (res) => {
-    const likesData = await res.json();
-    likesData.forEach((element) => {
-      if (element.item_id === name) {
-        const number = element.likes;
-        button.innerHTML = `${number} likes`;
-      }
-    });
+const getLikes = async (name, button) => {
+  const res = await fetch(LikeAPI);
+  const likesData = await res.json();
+  likesData.forEach((element) => {
+    if (element.item_id === name) {
+      const count = button.querySelector('.counter');
+      const number = element.likes;
+      count.innerHTML = `${number}`;
+    }
   });
 };
 
