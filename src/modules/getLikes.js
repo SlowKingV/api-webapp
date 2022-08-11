@@ -1,4 +1,4 @@
-const LikeAPI = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/bebc8dd1-7da3-4be4-85e9-6ad9997c621d/likes';
+const LikeAPI = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/0SbroHwilqPhRaF9QpdF/likes';
 
 const sendLikes = (name) => {
   fetch(LikeAPI, {
