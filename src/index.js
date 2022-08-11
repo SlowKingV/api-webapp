@@ -27,7 +27,6 @@ const getShowsInfo = async () => {
   });
 };
 getShowsInfo().then(() => {
-  console.log(showsInfo);
 });
 
 export { showsInfo };
