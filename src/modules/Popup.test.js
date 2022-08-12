@@ -84,6 +84,10 @@ describe('When opening the Popup', () => {
     expect(document.body.innerHTML).not.toBe(initialHTML);
   });
 
+  test('Comments counter shows the correct value', () => {
+    expect(popup.elements.COUNTER.textContent).toBe(popup.comments.length.toString());
+  });
+
   test('Hide loader window', () => {
     expect(popup.elements.LOADER.classList).toContain('hidden');
   });
@@ -104,5 +108,9 @@ describe('On comment submit', () => {
 
   test('Comment put into DOM', () => {
     expect(popup.elements.COMMENTS.children.length).toBe(commentsCount + 1);
+  });
+
+  test('Comments counter is updated correctly', () => {
+    expect(popup.elements.COUNTER.textContent).toBe(popup.comments.length.toString());
   });
 });
