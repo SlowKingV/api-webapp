@@ -1,3 +1,7 @@
+/**
+ * @jest-environment jsdom
+ */
+
 import getLikes from '../modules/getLikes.js';
 
 jest.mock('../../src/__test__/getLikes.test.js');

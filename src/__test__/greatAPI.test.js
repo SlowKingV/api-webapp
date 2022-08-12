@@ -1,3 +1,7 @@
+/**
+ * @jest-environment jsdom
+ */
+
 import hintLikes from '../modules/getLikes.js';
 
 test('hintLikes should return an array', () => {
