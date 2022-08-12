@@ -1,4 +1,4 @@
-import fetchShowInfo from './TvAPIConsumer.js';
+import fetchShowInfo from './TvAPI.js';
 import { fetchComments, postComent } from './InvolvementAPI.js';
 
 export default class Popup {
@@ -20,16 +20,22 @@ export default class Popup {
   }
 
   async submitComment(comment) {
+    this.#switchSubmitIcon('loading');
     await postComent(comment);
     this.comments = await fetchComments(comment.itemId);
     this.#putDataIntoDOM(this.data, this.comments);
-    this.elements.FORM.elements['button-submit'].disabled = false;
     this.elements.FORM.elements['input-name'].value = '';
     this.elements.FORM.elements['area-message'].value = '';
+    this.elements.FORM.elements['button-submit'].disabled = false;
+    this.#switchSubmitIcon('finished');
+    this.elements.FORM.elements['button-submit'].scrollIntoView();
+    setTimeout(() => { this.#switchSubmitIcon('send'); }, 3000);
   }
 
   #putDataIntoDOM(data, comments) {
     this.elements.IMAGE.setAttribute('src', data.image.medium);
+    const url = data.officialSite ? data.officialSite : data.url;
+    this.elements.IMAGE_LINK.setAttribute('href', url);
     this.elements.STATUS.textContent = data.status;
     this.elements.SUMMARY.innerHTML = data.summary;
 
@@ -58,6 +64,7 @@ export default class Popup {
     const LOADER = this.container.querySelector('#loader-wrap');
     const BTN_CLOSE = this.container.querySelector('#btn-close');
     const IMAGE = this.container.querySelector('.image');
+    const IMAGE_LINK = this.container.querySelector('.image-link');
     const STATUS = this.container.querySelector('.status');
     const SUMMARY = this.container.querySelector('.summary');
     const DATA = Popup.#toObject(this.container.querySelector('.data').children);
@@ -69,6 +76,7 @@ export default class Popup {
       LOADER,
       BTN_CLOSE,
       IMAGE,
+      IMAGE_LINK,
       STATUS,
       SUMMARY,
       DATA,
@@ -78,13 +86,21 @@ export default class Popup {
     };
   }
 
+  #switchSubmitIcon(status) {
+    const button = this.elements.FORM.elements['button-submit'];
+    Array.from(button.children).forEach((icon) => {
+      if (icon.classList.contains(status)) icon.classList.remove('hidden');
+      else icon.classList.add('hidden');
+    });
+  }
+
   static #createComment({ creation_date: creationDate, comment, username }) {
     const string = `
 <li class="comment">
   <p class="message">
-    <time datetime="${creationDate}">${creationDate.replaceAll('-', '/')}</time>
-    <b class="name">${username}:</b>
-    ${comment}
+    <b class="name">${username}</b>
+    <time class="date" datetime="${creationDate}">${creationDate.replaceAll('-', '/')}</time>
+    <span class="content">${comment}</span>
   </p>
 </li>
 `;

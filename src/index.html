@@ -32,39 +32,37 @@
 	<div id="popup" class="hidden">
 
 		<div class="card">
-			<div id="loader-wrap">
-				<i class="fa-solid fa-circle-notch fa-spin"></i>
-			</div>
 
-			<div id="btn-close">
-				<i class="fa-solid fa-xmark-large">X</i>
-			</div>
-
-			<div class="info">
-				<div class="img-wrap">
-					<a href="#">
-						<img src="https://via.placeholder.com/210x295" alt="Show image" class="image">
-						<span class="status">Status</span>
-					</a>
+			<div class="show">
+				<div id="loader-wrap">
+					<i class="fa-solid fa-circle-notch fa-spin"></i>
 				</div>
-
-				<div class="sum-wrap">
-					<h3 class="sum-title">Summary:</h3>
-					<p class="summary"></p>
+				<div id="btn-close">
+					<i class="fa-solid fa-xmark fa-fw"></i>
 				</div>
-
-				<ul class="data">
-					<li class="name"></li>
-					<li class="language"></li>
-					<li class="genres"></li>
-					<li class="premiered"></li>
-					<li class="ended"></li>
-					<li class="rating"></li>
-					<li class="network"></li>
-				</ul>
+				<div class="info">
+					<div class="img-wrap">
+						<a class="image-link" href="#" target="_blank">
+							<img src="https://via.placeholder.com/210x295" alt="Show image" class="image">
+							<span class="status">Status</span>
+						</a>
+					</div>
+					<div class="sum-wrap">
+						<h3 class="sum-title">Summary:</h3>
+						<p class="summary"></p>
+					</div>
+					<ul class="data">
+						<li class="name"></li>
+						<li class="language"></li>
+						<li class="genres"></li>
+						<li class="premiered"></li>
+						<li class="ended"></li>
+						<li class="rating"></li>
+						<li class="network"></li>
+					</ul>
+				</div>
+				<h3>Comments (<i id="counter">#</i>)</h3>
 			</div>
-
-			<h3>Comments (<i id="counter">#</i>)</h3>
 
 			<div id="comments">
 				<ul id="comments-list">
@@ -75,11 +73,14 @@
 			</div>
 
 			<form id="form-comments">
-				<input id="input-name" type="text" placeholder="Name" required>
-				<textarea id="area-message" placeholder="Enter your message..." required></textarea>
-				<input id="button-submit" type="submit">
+				<input id="input-name" class="form-input" type="text" placeholder="Name" required>
+				<textarea id="area-message" class="form-input" placeholder="Enter your message..." required></textarea>
+				<button id="button-submit" type="submit">
+					<i class="send fa-solid fa-paper-plane"></i>
+					<i class="loading hidden fa-solid fa-circle-notch fa-spin"></i>
+					<i class="finished hidden fa-solid fa-check"></i>
+				</button>
 			</form>
-	
 		</div>
 
 	</div>
