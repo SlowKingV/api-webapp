@@ -9,8 +9,9 @@ const popup = new Popup(document.getElementById('popup'));
 popup.elements.BTN_CLOSE.addEventListener('click', () => {
   popup.close();
 });
-document.getElementById('btn-open').addEventListener('click', () => {
-  popup.open(38);
+document.getElementById('btn-open').addEventListener('click', (event) => {
+  const button = event.currentTarget;
+  popup.open(button.dataset.id);
 });
 
 const form = document.getElementById('form-comments');
