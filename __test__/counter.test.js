@@ -1,4 +1,8 @@
-import showsCounter from '../src/counter.js';
+/**
+ * @jest-environment jsdom
+ */
+
+import showsCounter from '../src/modules/counter.js';
 
 const item = [{
   id: '2',
@@ -7,8 +11,8 @@ const item = [{
 
 document.body.innerHTML = '<a href="#" class="count">TOP</a>';
 
-test('check the counter fucntion ', () => {
+test('check the counter function ', () => {
   showsCounter(item);
-  const number = document.querySelector('.counter').innerHTML;
-  expect(number).toBe('counter 1');
+  const number = document.querySelector('.count').innerHTML;
+  expect(number).toBe('count 1');
 });

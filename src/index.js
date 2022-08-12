@@ -1,6 +1,6 @@
 import './images/logowebapi.png';
 import './style.css';
-
+import showsCounter from './modules/counter.js';
 import hintLikes from './modules/greatAPI.js';
 import { getLikes } from './modules/getLikes.js';
 
@@ -28,6 +28,8 @@ const getShowsInfo = async () => {
 };
 getShowsInfo().then(() => {
 });
+
+showsCounter();
 
 export { showsInfo };
 export { API_URL };
