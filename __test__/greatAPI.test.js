@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 
-import hintLikes from '../modules/getLikes.js';
+import hintLikes from '../src/modules/getLikes.js';
 
 test('hintLikes should return an array', () => {
   expect(hintLikes([])).toBeInstanceOf(Array);
