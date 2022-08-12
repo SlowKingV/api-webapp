@@ -9,6 +9,7 @@ export default class Popup {
 
   close() {
     this.container.classList.add('hidden');
+    this.elements.LOADER.classList.remove('hidden');
   }
 
   async open(id) {
