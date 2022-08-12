@@ -1,4 +1,4 @@
-import './images/logomovi.png';
+import './images/logowebapi.png';
 import './style.css';
 
 import hintLikes from './modules/greatAPI.js';
