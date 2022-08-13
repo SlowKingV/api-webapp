@@ -8,8 +8,6 @@ And a Pop-up with all the information added with a contact form to add a comment
 
 Any suggestions are welcome! Thank you
 
-### @SlowKingV
-### @andym80
 
 ## Built With
 
@@ -21,7 +19,7 @@ Any suggestions are welcome! Thank you
 
 ## Demo Video
 
-[](https://loom.com/share/f03dfefcd2014a2287fd44a9b499d190)
+[demo](https://loom.com/share/f03dfefcd2014a2287fd44a9b499d190)
 
 ## Getting Started
 
