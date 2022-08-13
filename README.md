@@ -25,7 +25,7 @@ Any suggestions are welcome! Thank you
 
 Get a copy from this repository on GitHub at CODE (green icon) and paste into your code editor .
 
-Take a look and run ##npm start## on your terminal to start the project.
+Take a look and run *npm start* on your terminal to start the project.
 
 
 ## Authors
