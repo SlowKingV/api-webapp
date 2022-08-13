@@ -1,5 +1,9 @@
 import './images/logowebapi.png';
 import './style.css';
+import './popup.css';
+
+// Import modules
+import Popup from './modules/Popup.js';
 import showsCounter from './modules/counter.js';
 import hintLikes from './modules/greatAPI.js';
 import { getLikes } from './modules/getLikes.js';
@@ -28,7 +32,33 @@ const getShowsInfo = async () => {
 };
 
 getShowsInfo();
-showsCounter(showsInfo);
+showsCounter(shows);
+
+const popup = new Popup(document.getElementById('popup'));
+popup.elements.BTN_CLOSE.addEventListener('click', () => {
+  popup.close();
+});
+document.querySelectorAll('.btn-comments').forEach((button) => {
+  button.addEventListener('click', (event) => {
+    const button = event.currentTarget;
+    popup.open(button.dataset.id);
+  });
+});
+
+const form = document.getElementById('form-comments');
+form.addEventListener('submit', (event) => {
+  event.preventDefault();
+  form.elements['button-submit'].disabled = true;
+  const comment = {
+    itemId: form.dataset.id,
+    username: form.elements['input-name'].value,
+    comment: form.elements['area-message'].value,
+  };
+
+  popup.submitComment(comment);
+});
+
+// Exporting
 export { showsInfo };
 export { API_URL };
 export { shows };

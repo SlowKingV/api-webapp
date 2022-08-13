@@ -1,121 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>API web app</title>
-    <script
-      src="https://kit.fontawesome.com/bf254b5930.js"
-      crossorigin="anonymous"
-    ></script>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-      crossorigin="anonymous"
-    />
-  </head>
 
-  <body>
-    <header class="header">
-      <a href="#">
-        <div class="logo">MOVILINK</div>
-      </a>
-      <nav class="nav">
-        <ul class="nav-list">
-          <li class="">
-            <a class="" href="#">Movies</a>
-          </li>
-          <li class="">
-            <a class="count" href="#">Week selection TOP</a>
-          </li>
-        </ul>
-      </nav>
-    </header>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>API web app</title>
+  <script src="https://kit.fontawesome.com/bf254b5930.js" crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+</head>
 
-    <!-- Andy's part -->
-    <div class="d-flex container">
-      <div class="col-md-12 mt-3">
-        <div class="d-flex justify-content-around" id="movicardsA">
-          <img
-            src="https://static.tvmaze.com/uploads/images/medium_portrait/163/407679.jpg"
-            alt="Person of Interest"
-          />
-          <img
-            src="https://static.tvmaze.com/uploads/images/medium_portrait/230/575652.jpg"
-            alt="Homeland"
-          />
-          <img
-            src="https://static.tvmaze.com/uploads/images/medium_portrait/189/474715.jpg"
-            alt="Gotham"
-          />
-        </div>
-      </div>
+<body>
+  <header class="header">
+    <a href="#">
+      <div class="logo">MOVILINK</div>
+    </a>
+    <nav class="nav">
+      <ul class="nav-list">
+        <li class="">
+          <a class="" href="#">Movies</a>
+        </li>
+        <li class="">
+          <a class="count" href="#">Week selection TOP</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
 
-      <div class="functionality" id="poscom&likesA">
-        <span><button class="comments" type="button">Comments</button></span>
-        <a href="javascript:void(0); " class="like-btn" id="2"
-          >Likes <span class="counter"></span
-          ><i class="fa fa-heart" aria-hidden="true"></i
-        ></a>
-        <span><button class="comments-1" type="button">Comments</button></span>
-        <a href="javascript:void(0); " class="like-btn" id="7"
-          >Likes <span class="counter"></span
-          ><i class="fa fa-heart" aria-hidden="true"></i
-        ></a>
-        <span><button class="comments-2" type="button">Comments</button></span>
-        <a href="javascript:void(0); " class="like-btn" id="11"
-          >Likes <span class="counter"></span
-          ><i class="fa fa-heart" aria-hidden="true"></i
-        ></a>
-      </div>
-
-      <div class="col-md-12">
-        <div class="d-flex justify-content-around" id="movicardsB">
-          <img
-            src="https://static.tvmaze.com/uploads/images/medium_portrait/0/154.jpg"
-            alt="constantine"
-          />
-          <img
-            src="https://static.tvmaze.com/uploads/images/medium_portrait/410/1026956.jpg"
-            alt="true blood"
-          />
-          <img
-            src="https://static.tvmaze.com/uploads/images/medium_portrait/178/446780.jpg"
-            alt="Hellsing Ultimate"
-          />
-        </div>
-      </div>
-
-      <div class="functionality" id="poscom&likesB">
-        <span><button class="comments-3" type="button">Comments</button></span>
-        <a href="javascript:void(0); " class="like-btn" id="15"
-          >Likes <span class="counter"></span
-          ><i class="fa fa-heart" aria-hidden="true"></i
-        ></a>
-        <span><button class="comments-4" type="button">Comments</button></span>
-        <a href="javascript:void(0); " class="like-btn" id="22"
-          >Likes <span class="counter"></span
-          ><i class="fa fa-heart" aria-hidden="true"></i
-        ></a>
-        <span><button class="comments-5" type="button">Comments</button></span>
-        <a href="javascript:void(0); " class="like-btn" id="26"
-          >Likes <br /><span class="counter"></span
-          ><i class="fa fa-heart" aria-hidden="true"></i
-        ></a>
+  <!-- Andy's part -->
+  <div class="d-flex container">
+    <div class="col-md-12 mt-3">
+      <div class="d-flex justify-content-around" id="movicardsA">
+        <img src="https://static.tvmaze.com/uploads/images/medium_portrait/163/407679.jpg" alt="Person of Interest" />
+        <img src="https://static.tvmaze.com/uploads/images/medium_portrait/230/575652.jpg" alt="Homeland" />
+        <img src="https://static.tvmaze.com/uploads/images/medium_portrait/189/474715.jpg" alt="Gotham" />
       </div>
     </div>
-    <!-- Diego's part -->
-    <div class="hidden"></div>
+    <div class="functionality" id="poscom&likesA">
+      <span><button class="btn-comments comments" type="button" data-id="2">Comments</button></span>
+      <a href="javascript:void(0); " class="like-btn" id="2">Likes <span class="counter"></span><i class="fa fa-heart"
+          aria-hidden="true"></i></a>
+      <span><button class="btn-comments comments-1" type="button" data-id="7">Comments</button></span>
+      <a href="javascript:void(0); " class="like-btn" id="7">Likes <span class="counter"></span><i class="fa fa-heart"
+          aria-hidden="true"></i></a>
+      <span><button class="btn-comments comments-2" type="button" data-id="11">Comments</button></span>
+      <a href="javascript:void(0); " class="like-btn" id="11">Likes <span class="counter"></span><i class="fa fa-heart"
+          aria-hidden="true"></i></a>
+    </div>
+    <div class="col-md-12">
+      <div class="d-flex justify-content-around" id="movicardsB">
+        <img src="https://static.tvmaze.com/uploads/images/medium_portrait/0/154.jpg" alt="constantine" />
+        <img src="https://static.tvmaze.com/uploads/images/medium_portrait/410/1026956.jpg" alt="true blood" />
+        <img src="https://static.tvmaze.com/uploads/images/medium_portrait/178/446780.jpg" alt="Hellsing Ultimate" />
+      </div>
+    </div>
 
-    <footer class="footer">
-      <span class="notcie">Created by Diego & Andy under CC license</span>
-    </footer>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
-      crossorigin="anonymous"
-    ></script>
-  </body>
+    <div class="functionality" id="poscom&likesB">
+      <span><button class="btn-comments comments-3" type="button" data-id="15">Comments</button></span>
+      <a href="javascript:void(0); " class="like-btn" id="15">Likes <span class="counter"></span><i class="fa fa-heart"
+          aria-hidden="true"></i></a>
+      <span><button class="btn-comments comments-4" type="button" data-id="22">Comments</button></span>
+      <a href="javascript:void(0); " class="like-btn" id="22">Likes <span class="counter"></span><i class="fa fa-heart"
+          aria-hidden="true"></i></a>
+      <span><button class="btn-comments comments-5" type="button" data-id="26">Comments</button></span>
+      <a href="javascript:void(0); " class="like-btn" id="26">Likes <br /><span class="counter"></span><i
+          class="fa fa-heart" aria-hidden="true"></i></a>
+    </div>
+  </div>
+
+  <!-- Diego's part -->
+  <div id="popup" class="hidden">
+    <div class="card">
+
+      <div class="show">
+        <div id="loader-wrap">
+          <i class="fa-solid fa-circle-notch fa-spin"></i>
+        </div>
+        <div id="btn-close">
+          <i class="fa-solid fa-xmark fa-fw"></i>
+        </div>
+        <div class="info">
+          <div class="img-wrap">
+            <a class="image-link" href="#" target="_blank">
+              <img src="https://via.placeholder.com/210x295" alt="Show image" class="image">
+              <span class="status">Status</span>
+            </a>
+          </div>
+          <div class="sum-wrap">
+            <h3 class="sum-title">Summary:</h3>
+            <p class="summary"></p>
+          </div>
+          <ul class="data">
+            <li class="name"></li>
+            <li class="language"></li>
+            <li class="genres"></li>
+            <li class="premiered"></li>
+            <li class="ended"></li>
+            <li class="rating"></li>
+            <li class="network"></li>
+          </ul>
+        </div>
+        <h3>Comments (<i id="counter">#</i>)</h3>
+      </div>
+
+      <div id="comments">
+        <ul id="comments-list">
+          <li class="comment">
+            <strong>Fetching commments...</strong>
+          </li>
+        </ul>
+      </div>
+
+      <form id="form-comments">
+        <input id="input-name" class="form-input" type="text" placeholder="Name" required>
+        <textarea id="area-message" class="form-input" placeholder="Enter your message..." required></textarea>
+        <button id="button-submit" type="submit">
+          <i class="send fa-solid fa-paper-plane"></i>
+          <i class="loading hidden fa-solid fa-circle-notch fa-spin"></i>
+          <i class="finished hidden fa-solid fa-check"></i>
+        </button>
+      </form>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+    crossorigin="anonymous"></script>
+</body>
+
 </html>
