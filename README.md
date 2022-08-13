@@ -8,8 +8,8 @@ And a Pop-up with all the information added with a contact form to add a comment
 
 Any suggestions are welcome! Thank you
 
-# @SlowKingV
-# @andym80
+### @SlowKingV
+### @andym80
 
 ## Built With
 
