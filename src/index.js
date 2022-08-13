@@ -26,11 +26,9 @@ const getShowsInfo = async () => {
     showsInfo.push({ id: showData.id, name: showData.name, image: showData.image.medium });
   });
 };
-getShowsInfo().then(() => {
-});
 
-showsCounter();
-
+getShowsInfo();
+showsCounter(showsInfo);
 export { showsInfo };
 export { API_URL };
 export { shows };
